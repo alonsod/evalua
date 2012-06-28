@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Recetas registradas {% endblock %}
+{% comment %} usuarios {% endcomment %}
+
+{% block style_css %}
+	<style >
+		img { width:100px;}
+	</style>
+{% endblock%}
+
+{% block encabezado %}
+	<h1> Nuestros cursos </h1>
+{% endblock %}
+
+{% block contenido %}
+	<a href="/receta/nueva">Agregar receta</a>
+	<ul>
+		{% for dato in datos %}
+		<li>
+				 {{dato.nombre_curso}}
+				
+		</li>
+		{% empty %}
+		<li> No hay recetas registradas </li>
+		{% endfor %}
+	</ul>	
+{% endblock %}	

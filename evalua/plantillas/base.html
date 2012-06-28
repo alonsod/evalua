@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<htm lang='es'>
+<head>
+		<meta charset='utf-8'>
+		<title> recetarop FDW {% block titulo %} {% endblock %} </title>
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/base.css">
+		<link rel="shortcut icon" type="text/css" href="{{STATIC_URL}}img/icono.png">
+		<style type="text/css">
+			{% block style_css %} {% endblock %}
+		</style>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+		<script src='{{STATIC_URL}}js/demo.js'></script>		
+</head>
+<body>
+	<header>
+		{% block encabezado %} {% endblock %}
+		<nav>
+			<ul id='menu'>
+				<li><a href='/'>Inicio</a></li>
+				<li><a href='/usuarios'>Usuarios </a></li>
+				<li><a href='/recetas'>Recetas</a></li>
+				<li><a href='/comenta'>Comenta</a></li>
+				<li><a href='/sobre'>Sobre</a></li>
+				<li><a href='/contacto'>Contactanos</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class='contenido'>
+		{% block contenido %}{% endblock %}
+	</section>
+	<footer>
+		<p> Proyecto ejemplo Django en @maestros &copy;2012 </p>
+	</footer>
+</body>
+</html>
