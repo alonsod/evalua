@@ -4,21 +4,21 @@ from django.contrib.auth.models import User
 
 class Curso(models.Model):
 	curso_id = models.AutoField(primary_key=True)
-	nombre_curso = models.TextField()
+	nombre_curso = models.CharField(max_length=100)
 
 	def __unicode__(self):
 		return self.nombre_curso
 
 class Cuestionario(models.Model):
 	cuestionario_id = models.AutoField(primary_key=True)
-	nombre_cuestionario = models.TextField()
+	nombre_cuestionario = models.CharField(max_length=100)
 
 	def __unicode__(self):
 		return self.nombre_cuestionario
 
 class Grupo(models.Model):		
 	grupo_id = models.AutoField(primary_key=True)
-	nombre_grupo = models.TextField()
+	nombre_grupo = models.CharField(max_length=100)
 	fecha = models.DateTimeField()
 	curso = models.ForeignKey(Curso)
 	cuestionario = models.ForeignKey(Cuestionario)
@@ -29,7 +29,7 @@ class Grupo(models.Model):
 
 class Participante(models.Model):
 	participante_id = models.AutoField(primary_key=True)
-	nombre = models.TextField()
+	nombre = models.CharField(max_length=300)
 
 	def __unicode__(self):
 		return self.nombre
@@ -37,7 +37,6 @@ class Participante(models.Model):
 class DetalleGrupo(models.Model):
 	grupo = models.ForeignKey(Grupo)
 	participante = models.ForeignKey(Participante)
-	nombre = models.TextField()
 	usuario = models.ForeignKey(User)
 	fregistro = models.DateTimeField(auto_now=True)
 	

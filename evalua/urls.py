@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'evalua.views.home', name='home'),
     # url(r'^evalua/', include('evalua.foo.urls')),
     url(r'^cursos/$','principal.views.cursos'),
+    url(r'^cursos/nuevo$','principal.views.nuevo_curso'),
+    url(r'^curso/(?P<curso_id>\d+)$','principal.views.curso'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

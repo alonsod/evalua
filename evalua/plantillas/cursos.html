@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %} Recetas registradas {% endblock %}
+{% block titulo %} Cursos {% endblock %}
 {% comment %} usuarios {% endcomment %}
 
 {% block style_css %}
-	<style >
-		img { width:100px;}
-	</style>
+
 {% endblock%}
 
 {% block encabezado %}
@@ -14,12 +12,11 @@
 {% endblock %}
 
 {% block contenido %}
-	<a href="/receta/nueva">Agregar receta</a>
+	<a href="/cursos/nuevo">Agregar curso</a>
 	<ul>
 		{% for dato in datos %}
 		<li>
-				 {{dato.nombre_curso}}
-				
+			<a href="{% url principal.views.curso dato.curso_id %}">  {{dato.nombre_curso}} </a>				
 		</li>
 		{% empty %}
 		<li> No hay recetas registradas </li>

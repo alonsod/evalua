@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block titulo %}  Nuevo curso  {% endblock %}
+{% block encabezado %} <h1> Registro de nuevo curso </h1> {% endblock %}
+{% block contenido %}
+	<form id='formulario' method='post' action=''> {% csrf_token%}
+		<table>{{formulario}}</table>
+		<p>
+			<input type='submit' name='Registrar' value='Registrar' />
+			{% if butonDelete %}
+				<input type='submit' name='Eliminar' value='Eliminar' />
+			{% endif %}
+		</p>
+	</form>
+{% endblock %}
